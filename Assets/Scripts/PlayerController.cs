@@ -13,7 +13,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        // swap gravity on tap and release
+        if (Input.GetMouseButtonDown(0))
+        {
+            Physics2D.gravity *= -1;
+        }
+        if (Input.GetMouseButtonUp(0))
         {
             Physics2D.gravity *= -1;
         }
